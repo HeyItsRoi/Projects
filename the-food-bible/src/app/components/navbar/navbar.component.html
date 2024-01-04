@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="navbar" [class.hidden]="toggle_search">
+	<mat-toolbar-row>
+		<button mat-icon-button (click)="toggleSidebar()">
+			<mat-icon>menu</mat-icon>
+		</button>
+		<span class="spacer"></span>
+		<button mat-icon-button  (click)="toggleSearch(true)">
+			<mat-icon>search</mat-icon>
+		</button>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar class="search-block" [class.active]="toggle_search">
+	<mat-toolbar-row>
+			<button class="search-icon" mat-icon-button disabled>
+		<mat-icon>search</mat-icon>
+		</button>
+		<input class="search-control" type="text" placeholder="Search" [(ngModel)]="query" #searchbar (keyup)="search()">
+		<button mat-button mat-icon-button (click)="toggleSearch(false)">
+			<mat-icon>close</mat-icon>
+		</button> 
+	</mat-toolbar-row>
+</mat-toolbar>

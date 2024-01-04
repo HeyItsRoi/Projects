@@ -1,0 +1,16 @@
+<div class="restaurant-list">
+	<mat-card *ngFor="let restaurant of collection?.restaurants" class="restaurant-card">
+		<mat-card-header>
+			<mat-card-title-group>
+				<mat-card-title>{{ restaurant.name }}</mat-card-title>
+				<mat-card-subtitle>
+					<span>{{ calcAvgRating(restaurant.rating ) }} </span> <br>
+					<span>{{ getPriceRange(restaurant.cost) }} ‧ {{ restaurant.cuisine }} ‧ {{ restaurant.location }}</span>
+				</mat-card-subtitle>
+			</mat-card-title-group>
+		</mat-card-header>
+		<mat-card-actions align="end">
+			<button mat-button>Read More &#8594;</button>
+		</mat-card-actions>
+	</mat-card>
+</div>
