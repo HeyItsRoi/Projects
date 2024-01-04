@@ -1,0 +1,42 @@
+<a mat-icon-button class="support" (click)="toggleJewSheet()">
+	<mat-icon>support</mat-icon>
+</a>
+
+<!-- Expanded Menu -->
+<ng-template #menu let-stuff>
+	<ul class="side-menu">
+		<li *ngFor="let item of stuff">
+			<a href="#" [href]="item.link">
+				<mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+				{{item.name}}
+			</a>
+		</li>
+	</ul>
+</ng-template>
+
+<!-- Collapsed Menu -->
+<ng-template #menu_collapsed let-stuff let-i>
+
+	<ng-container *ngFor="let item of stuff; let i = index;">
+
+		<a mat-icon-button [href]="item.link" [title]="item.name">
+			<mat-icon>{{item.icon}}</mat-icon>
+		</a>
+	</ng-container>
+
+</ng-template>
+
+
+<!-- The expanded version -->
+<ng-container *ngIf="!is_collapsed">
+	<ng-container *ngTemplateOutlet="menu; context: { $implicit : items }"></ng-container>
+</ng-container>
+
+<!-- The collapsed version -->
+<ng-container *ngIf="is_collapsed">
+	<ng-container *ngTemplateOutlet="menu_collapsed; context: { $implicit : items }"></ng-container>
+</ng-container>
+
+<a mat-icon-button class="support" (click)="toggleJewSheet()">
+	<mat-icon>support</mat-icon>
+</a>

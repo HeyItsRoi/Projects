@@ -1,0 +1,28 @@
+@import "src/styles/colors.scss";
+
+.navbar {
+    width: 90vw;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    background-color: $color-background;
+
+    .mat-toolbar {
+        background-color: $color-background;
+    }
+
+    .navbar-spacer {
+        flex: 1 1 auto;
+    }
+
+    .navbar-link {
+        color: $color-on-background;
+        text-decoration: none;
+    }
+
+    .navbar-link:hover {
+        color: $color-primary;
+    }
+}

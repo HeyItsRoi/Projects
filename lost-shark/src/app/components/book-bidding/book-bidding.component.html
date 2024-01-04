@@ -1,0 +1,92 @@
+<section class="book-bidding">
+    <h2 mat-dialog-title align="center">Add Engraving Recipe</h2>
+    <div mat-dialog-content>
+        <div class="engraving-container header-cell">
+            <img src="../../assets/images/engraving-4.webp" alt="Legendary Book">
+            <span class="book-title">Legendary Engraving Recipe</span>
+        </div>
+        <hr>
+        <div class="engraving-bid-container">
+            <div class="cell">
+                <span>Item Market Price</span>
+                <mat-form-field appearance="outline">
+                    <input matInput type="number" (keyup)="calculateBid($event)">
+                    <img src="../../assets/icons/gold.png" alt="Gold" matSuffix>
+                </mat-form-field>
+            </div>
+            <div class="cell">
+                <span>Equity Bid</span>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" disabled="true" value="{{price.equity.bid}}">
+                    <mat-icon matSuffix>file_copy</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="cell">
+                <span>Ideal Bid</span>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" disabled="true" value="{{price.ideal.bid}}">
+                    <mat-icon matSuffix>file_copy</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="cell">
+                <span>Anti-Idiot Bid</span>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" disabled="true" value="{{price.idiot.bid}}">
+                    <mat-icon matSuffix>file_copy</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <hr>
+        <div class="engraving-profit-container">
+            <div class="cell">
+                <span>Equity Profit</span>
+                <span>
+                    {{price.equity.profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+                
+            </div>
+            <div class="cell">
+                <span>Ideal Profit</span>
+                <span>
+                    {{price.ideal.profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+            </div>
+            <div class="cell">
+                <span>Idiot Profit</span>
+                <span>
+                    {{price.idiot.profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="engraving-competitor-profit-container">
+            <div class="cell">
+                <span>Competitor Equity Profit</span>
+                <span>
+                    {{price.equity.competitor_profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+            </div>
+            <div class="cell">
+                <span>Competitor Ideal Profit</span>
+                <span>
+                    {{price.ideal.competitor_profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+            </div>
+            <div class="cell">
+                <span>Competitor Idiot Profit</span>
+                <span>
+                    {{price.idiot.competitor_profit}}
+                    <img src="../../assets/icons/gold.png" alt="Gold">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close>Close</button>
+    </div>
+</section>

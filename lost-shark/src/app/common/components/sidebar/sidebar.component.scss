@@ -1,0 +1,131 @@
+@import "src/styles/colors.scss";
+
+:host
+{
+	$text-color 	: #586577; // Default text color
+	$main-padding	: 16px;	// Sidebar container padding
+	$sidebar-width	: 248px;
+
+	display: flex;
+	flex-shrink: 0;
+	flex-basis: $sidebar-width;
+	flex-direction: column;
+	background-color: black;
+	color: $text-color;
+	padding: $main-padding;
+	overflow: hidden auto;
+	position: relative;
+	width: $sidebar-width;
+
+	& > *
+	{
+		max-width: $sidebar-width - $main-padding * 2;
+	}
+
+	.menu-title
+	{
+		display: flex;
+		align-items: center;
+		color: $text-color;
+		text-decoration: none;
+
+		&.active
+		{
+			color: $color-primary !important;
+		}
+	}
+
+	&.collapsed
+	{
+		flex-basis: 50px;
+		padding: $main-padding 0;
+		align-items: center;
+
+		.menu-title
+		{
+			padding: 0;
+			justify-content: space-around;
+		}
+
+		ul
+		{
+			width: 100%;
+
+			li
+			{
+				margin: 0;
+				margin-left: 10px;
+			}
+		}
+	}
+
+	a
+	{
+		text-decoration: none;
+	}
+
+	.side-menu
+	{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 14px;
+
+		a:hover
+		{
+			color: lighten($color: $text-color, $amount: 10);
+		}
+
+		.open
+		{
+			.arrow
+			{
+				transform: rotate(90deg);
+			}
+		}
+
+		.side-menu
+		{
+			li
+			{
+				margin-left: 50px - $main-padding;
+
+				li
+				{
+					margin-left: 10px;
+					font-size: 13px;
+				}
+			}
+		}
+
+		li
+		{
+			position: relative;
+			margin: 10px;
+
+			.mat-icon
+			{
+				margin-right: 10px;
+			}
+
+			.arrow
+			{
+				font-size: 18px;
+				position: absolute;
+				left: -17px;
+			}
+
+			.side-menu .arrow
+			{
+				top: 2px;
+			}
+		}
+	}
+
+    .support
+	{
+		margin-top: auto;
+		bottom: 0;
+		color: white;
+	}
+}

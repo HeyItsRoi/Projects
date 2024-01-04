@@ -1,0 +1,81 @@
+@import "src/styles/colors.scss";
+
+.book-bidding 
+{
+	font-size: 14px;
+
+	.mat-dialog-title
+	{
+		margin: -24px -24px 0 -24px;
+		background-color: $color-secondary-background;
+		color: $color-secondary;
+	}
+
+	.mat-dialog-content
+	{
+		background-color: $color-background;
+		color: white;
+		padding: 15px;
+	}
+
+	hr
+	{
+		height: 1px;
+        background-color: $color-secondary;
+        border: none;
+	}
+
+	.header-cell
+	{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 20px;
+
+		.book-title
+		{
+			color: #e8921b;;
+		}
+	}
+
+	.cell
+	{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.mat-input-element
+	{
+		color: white;
+	}
+
+	.mat-form-field 
+	{
+		width: 40%;
+		padding-top: 20px;
+	}
+
+	.mat-form-field-appearance-outline .mat-form-field-infix
+	{
+		padding: 0.2em 0 0.2em 0 !important;
+		border-top: 0.55em solid transparent !important;
+  	}
+
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] 
+{
+	-moz-appearance: textfield;
+}
